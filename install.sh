@@ -21,6 +21,13 @@ if [[ $OS_NAME = "opensuse" ]] ; then
     install -m 755 "./bash/alias" "$HOME/.alias"
     install -m 755 "./git/gitconfig" "$HOME/.gitconfig"
     install -m 755 "./git/gitignore_global" "$HOME/.gitignore_global"
+
+    install -m 755 -d "$HOME/.vim"
+    install -m 755 -d "$HOME/.vim/plugged"
+    install -m 755 -d "$HOME/.vim/undodir"
+
+    install -m 755 -d "$HOME/.config/nvim"
+    install -m 755 "./nvim/init.vim" "$HOME/.config/nvim/init.vim"
 fi
 
 return 0
