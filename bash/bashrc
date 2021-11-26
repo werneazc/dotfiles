@@ -1,0 +1,80 @@
+# There are 3 different types of shells in bash: the login shell, normal shell
+# and interactive shell. Login shells read ~/.profile and interactive shells
+# read ~/.bashrc; in our setup, /etc/profile sources ~/.bashrc - thus all
+# settings made here will also take effect in a login shell.
+#
+# NOTE: It is recommended to make language settings in ~/.profile rather than
+# here, since multilingual X sessions would not work properly if LANG is over-
+# ridden in every subshell.
+
+# Some applications read the EDITOR variable to determine your favourite text
+# editor. So uncomment the line below and enter the editor of your choice :-)
+export EDITOR=/usr/bin/vim
+#export EDITOR=/usr/bin/mcedit
+
+# For some news readers it makes sense to specify the NEWSSERVER variable here
+#export NEWSSERVER=your.news.server
+
+# =============================================================================
+# Get OS name for OS specific configurations
+# =============================================================================
+if [ -s "/etc/os-release" ] ; then
+    OS_NAME="$(grep -o -m 1 "openSUSE" "/etc/os-release")"
+    OS_NAME=${OS_NAME,,}
+else
+    echo "WARNING: Cannot determine OS."
+    OS_NAME="unknown"
+fi
+
+# =============================================================================
+# Add bash aliases
+# =============================================================================
+test -s ~/.alias && . ~/.alias || true
+
+# =============================================================================
+# Add additional program folders to PATH
+# =============================================================================
+if [ -d "$HOME/bin" ] ; then
+    export PATH="$HOME/bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    export PATH="$HOME.local/bin:$PATH"
+fi
+if [ -d "$HOME/.poetry/bin" ] ; then
+    export PATH="$HOME/.poetry/bin:$PATH"
+fi
+
+# =============================================================================
+# Helper functions
+# =============================================================================
+function include() {
+    [[ -s "$1" ]] && source "$1"
+}
+
+# =============================================================================
+# Source configurations for programs used
+# =============================================================================
+if [[ $OS_NAME = "opensuse" ]] ; then
+
+    if [ -s "/usr/share/powerline/bash/powerline.sh" ] ; then
+        export POWERLINE_BASH_CONTINUATION=1
+        export POWERLINE_BASH_SELECT=1
+        source "/usr/share/powerline/bash/powerline.sh"
+        powerline-daemon -q
+    fi
+
+    include "/usr/share/bash-completion/bash_completion"
+
+    include "/usr/share/bash-completion/completions/fzf-key-bindings"
+
+    include "/usr/share/bash-completion/completions/fzf"
+    export FZF_DEFAULT_COMMAND="fd -t f"
+
+    include "/usr/share/autojump/autojump.bash"
+fi
+
+# =============================================================================
+# Show recent space usage of disks
+# =============================================================================
+dfc
