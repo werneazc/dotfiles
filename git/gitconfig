@@ -1,0 +1,79 @@
+[gui]
+	spellingdictionary = en_US
+	recentrepo = ""
+	tabsize = 15
+[user]
+	email = andre.werner@systec-electronic.com
+	name = Andre Werner
+[guitool "stash push"]
+	cmd = git stash
+[guitool "stash pop"]
+	cmd = git stash pop
+[guitool "others/show dangling commits"]
+	cmd = gitk --all $(git fsck --no-reflog | awk '/dangling commit/ {print $3}')
+[guitool "others/clean ignored untracked files"]
+	cmd = git clean -fXd
+[guitool "others/clean all untracked files"]
+	cmd = git clean -fxd
+[guitool "stash/stash list"]
+	cmd = git stash list
+[guitool "stash/stash show"]
+	cmd = git stash show
+
+[merge]
+	tool = meld
+
+[core]
+	excludesfile = .gitignore_global
+	autocrlf = false
+    pager = delta
+
+[alias]
+    # one-line log
+    l = log --oneline --all --decorate --graph --date=short
+
+    # add files to commit
+    a = add
+    ap = add -p
+
+    # commit changes
+    c = commit
+    cm = commit -s -e
+
+    # push changes
+    p = push
+
+    # diff recent changes
+    d = diff
+    dd = diff --submodule=diff
+    ds = diff --stat
+    dc = diff --cached
+
+    #open git gui
+    g = gui
+
+    # show current working copy status
+    s = status -s
+
+    # checkout branch
+    co = checkout
+
+    # git blame
+    bl = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+    # list aliases
+    la = "!git config -l | grep alias | cut -c 7-"
+
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+    themes = Solarized (dark)
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
