@@ -154,11 +154,11 @@ else
     inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-" Use `>` and `<` to navigate diagnostics
+" Use `[` and `]` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location
 " list.
-nmap <silent> <leader>< <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>> <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>[ <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>] <Plug>(coc-diagnostic-next)
 
 " Show all diagnostics.
 nnoremap <silent><nowait> <leader>a  :<C-u>CocList diagnostics<cr>
