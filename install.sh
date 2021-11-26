@@ -12,7 +12,7 @@ if [ -s "/etc/os-release" ] ; then
     OS_NAME=${OS_NAME,,}
 else
     echo "Error: Cannot determine OS."
-    return 1
+    exit 1
 fi
 
 if [[ $OS_NAME = "opensuse" ]] ; then
@@ -30,4 +30,4 @@ if [[ $OS_NAME = "opensuse" ]] ; then
     install -m 755 "./nvim/init.vim" "$HOME/.config/nvim/init.vim"
 fi
 
-return 0
+exit 0
