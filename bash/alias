@@ -1,5 +1,9 @@
 # Add aliases for git. The shortcuts are configured within the git global settings file.
 
+if [ -f /etc/profile.d/bash_completion.sh ] && ! shopt -oq posix; then
+    source /etc/profile.d/bash_completion.sh
+fi
+
 function_exists() {
     declare -f -F $1 > /dev/null
     return $?
