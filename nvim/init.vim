@@ -178,9 +178,9 @@ nnoremap <silent><nowait> <leader>a  :<C-u>CocList diagnostics<cr>
 
 " GoTo code navigation.
 nmap <silent> <leader>gd <Plug>(coc-definition)
-nmap <silent> <leader>ggy <Plug>(coc-type-definition)
-nmap <silent> <leader>ggi <Plug>(coc-implementation)
-nmap <silent> <leader>ggr <Plug>(coc-references)
+nmap <silent> <leader>gt <Plug>(coc-type-definition)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <silent> <leader>gr <Plug>(coc-references)
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
