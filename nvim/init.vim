@@ -20,6 +20,10 @@ command! -bang -nargs=* MyGrep
 " -----------------------------------------------------------------------------
 let mapleader=' '
 nnoremap <silent> <leader>gg :MyGrep (expand('<cword>'))<cr>
+nnoremap <silent> <leader>ro :e#<cr>
+nnoremap <silent> <C-Left> gT
+nnoremap <silent> <C-Right> gt
+nnoremap <silent> <leader>\ ``
 
 " -----------------------------------------------------------------------------
 " PlugManager
