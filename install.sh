@@ -21,6 +21,7 @@ if [[ $OS_NAME = "opensuse" ]] ; then
     install -m 755 "./bash/alias" "$HOME/.alias"
     install -m 755 "./git/gitconfig" "$HOME/.gitconfig"
     install -m 755 "./git/gitignore_global" "$HOME/.gitignore_global"
+    install -m 755 "./tmux/tmux.conf" "$HOME/.tmux.conf"
 
     install -m 755 -d "$HOME/.vim"
     install -m 755 -d "$HOME/.vim/plugged"
