@@ -24,6 +24,7 @@ nnoremap <silent> <leader>ro :e#<cr>
 nnoremap <silent> <C-Left> gT
 nnoremap <silent> <C-Right> gt
 nnoremap <silent> <leader>\ ``
+nnoremap <silent> <C-t> :tabnew<cr>
 
 " -----------------------------------------------------------------------------
 " PlugManager
@@ -44,6 +45,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'csexton/trailertrash.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+Plug 'kergoth/vim-bitbake'
 call plug#end()
 
 " -----------------------------------------------------------------------------
