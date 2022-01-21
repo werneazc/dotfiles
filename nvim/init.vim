@@ -35,6 +35,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
+Plug 'ainnhe/everforest'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-syntastic/syntastic'
@@ -54,7 +55,8 @@ call plug#end()
 
 " Editor Settings
 :syntax enable
-:colorscheme gruvbox
+let g:everforest_background = 'hard'
+:colorscheme everforest
 set background=dark
 set nu
 set noswapfile
