@@ -75,6 +75,7 @@ set showmatch
 set showtabline=2
 set updatetime=300
 set shortmess+=c
+set clipboard+=unnamed
 
 " Format settings
 set tabstop=4
