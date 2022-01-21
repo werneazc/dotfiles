@@ -25,6 +25,7 @@ nnoremap <silent> <C-Left> gT
 nnoremap <silent> <C-Right> gt
 nnoremap <silent> <leader>\ ``
 nnoremap <silent> <C-t> :tabnew<cr>
+nnoremap <silent> <C-c> :tabclose<cr>
 
 " -----------------------------------------------------------------------------
 " PlugManager
@@ -110,6 +111,7 @@ nnoremap <leader>g :FzfRg<cr>
 nnoremap <leader>c :FzfCommands<cr>
 nnoremap <leader>l :FzfLines<cr>
 nnoremap <leader>b :FzfBuffers<cr>
+nnoremap <leader>t :FzfBTags<cr>
 
 " Syntastic
 " -----------------------------------------------------------------------------
