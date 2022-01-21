@@ -4,6 +4,11 @@ if [ -f /etc/profile.d/bash_completion.sh ] && ! shopt -oq posix; then
     source /etc/profile.d/bash_completion.sh
 fi
 
+if [ -x "/usr/bin/bat" ] ; then 
+    alias cat="bat --color -p"
+    alias man="man -P bat"
+fi
+
 function_exists() {
     declare -f -F $1 > /dev/null
     return $?
