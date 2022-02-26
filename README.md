@@ -4,16 +4,12 @@ Private dot-files for shell and editor initialisations.
 
 ## neovim plugins
 
-DejavuSansMono Nerd font is required.
+DejavuSansMono Nerd font is required (https://github.com/ryanoasis/nerd-fonts).
 
 ### CoC extensions to install
 
 Installation of nodejs12 or higher required. Installation of yarn required.
 
-- coc-clangd
-- coc-cmake
-- coc-markdownlint
-- coc-json
-- coc-jedi
-- coc-sh
-- coc-yaml
+## i3 Window Manager
+
+DejavuSansMono Nerd font is required (https://github.com/ryanoasis/nerd-fonts).
