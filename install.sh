@@ -29,6 +29,14 @@ if [[ $OS_NAME = "opensuse" ]] ; then
 
     install -m 755 -d "$HOME/.config/nvim"
     install -m 755 "./nvim/init.vim" "$HOME/.config/nvim/init.vim"
+
+    install -m 755 -d "$HOME/.config/alacritty"
+    install -m 755 "./alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
+
+    install -m 755 -d "$HOME/.config/i3"
+    install -m 755 -d "$HOME/.config/i3status"
+    install -m 755 "./i3/i3.config" "$HOME/.config/i3/config"
+    install -m 755 "./i3/i3status.config" "$HOME/.config/i3status/config"
 fi
 
 exit 0
