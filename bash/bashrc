@@ -72,6 +72,8 @@ if [[ $OS_NAME = "opensuse" ]] ; then
     export FZF_DEFAULT_COMMAND="fd -t f"
 
     include "/usr/share/autojump/autojump.bash"
+
+    setxkbmap eu
 fi
 
 # =============================================================================
