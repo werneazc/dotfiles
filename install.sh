@@ -38,6 +38,8 @@ if [[ $OS_NAME = "opensuse" ]] ; then
     install -m 755 -d "$HOME/.config/i3status"
     install -m 755 "./i3/i3.config" "$HOME/.config/i3/config"
     install -m 755 "./i3/i3status.config" "$HOME/.config/i3status/config"
+    install -m 755 "./i3/i3status-rs.toml" "$HOME/.config/i3status/config.toml"
+
     install -m 755 -d "$HOME/.config/powerline"
     install -m 755 "./powerline/powerline_config.json" "$HOME/.config/powerline/config.json"
 fi
