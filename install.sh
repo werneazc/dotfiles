@@ -29,7 +29,7 @@ if [[ $OS_NAME = "opensuse" ]] ; then
 
     install -m 755 -d "$HOME/.config/nvim"
     install -m 755 "./nvim/init.vim" "$HOME/.config/nvim/init.vim"
-    install -m 755 "./nvim/coc-settings.json" "$HOME/.config/nvim/init.vim"
+    install -m 755 "./nvim/coc-settings.json" "$HOME/.config/nvim/coc-settings.json"
 
     install -m 755 -d "$HOME/.config/alacritty"
     install -m 755 "./alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
