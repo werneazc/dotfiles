@@ -10,17 +10,21 @@
 if [ -s "/etc/os-release" ] ; then
     OS_NAME="$(grep -o -m 1 "openSUSE" "/etc/os-release")"
     OS_NAME=${OS_NAME,,}
+elif [ $(uname) == "Darwin" ] ;then
+    OS_NAME="mac"
 else
     echo "Error: Cannot determine OS."
     return 1
 fi
 
-if [[ $OS_NAME = "opensuse" ]] ; then
-    install -m 755 "./bash/bashrc" "$HOME/.bashrc"
-    install -m 755 "./bash/profile" "$HOME/.profile"
-    install -m 755 "./bash/alias" "$HOME/.alias"
+if [[ $OS_NAME == "mac" ]] ; then
+    install -m 755 "./mac/zshrc" "$HOME/.zshrc"
+    install -m 755 "./mac/profile" "$HOME/.zprofile"
     install -m 755 "./git/gitconfig" "$HOME/.gitconfig"
     install -m 755 "./git/gitignore_global" "$HOME/.gitignore_global"
+
+    install -m 755 -d "$HOME/.config/nvim"
+    install -m 755 "./mac/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 fi
 
 return 0
