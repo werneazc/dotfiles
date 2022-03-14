@@ -27,6 +27,9 @@ if [[ $OS_NAME == "mac" ]] ; then
     install -m 755 -d "$HOME/.config/nvim"
     install -m 755 "./nvim/init.vim" "$HOME/.config/nvim/init.vim"
     install -m 755 "./nvim/coc-settings.json" "$HOME/.config/nvim/coc-settings.json"
+
+    install -m 755 -d "$HOME/.config/lsd"
+    install -m 755 "./lsd/config.yml" "$HOME/.config/lsd/config.yml"
 fi
 
 exit 0
