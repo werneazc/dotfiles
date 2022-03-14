@@ -4,9 +4,9 @@ if [ -f /etc/profile.d/bash_completion.sh ] && ! shopt -oq posix; then
     source /etc/profile.d/bash_completion.sh
 fi
 
-if [ -x "/usr/bin/bat" ] ; then 
+if [ -x "/usr/bin/bat" ] ; then
     alias cat="bat --color -p"
-    alias man="man -P bat"
+    alias man="man -P \"bat -p\""
 fi
 
 function_exists() {
@@ -21,3 +21,11 @@ for al in `git config -l | sed -n 's/alias.\([a-z]*\)=.*/\1/p'`; do
     function_exists $complete_fnc && __git_complete g$al $complete_func
 done
 
+which lsd &> /dev/null
+RET=$?
+if [[ RET -eq 0 ]] ; then
+    alias ls="lsd"
+fi
+
+alias ll="ls -lh"
+alias la="ls -lah"

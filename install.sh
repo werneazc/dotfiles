@@ -42,6 +42,9 @@ if [[ $OS_NAME = "opensuse" ]] ; then
 
     install -m 755 -d "$HOME/.config/powerline"
     install -m 755 "./powerline/powerline_config.json" "$HOME/.config/powerline/config.json"
+
+    install -m 755 -d "$HOME/.config/lsd"
+    install -m 755 "./lsd/config.yml" "$HOME/.config/lsd/config.yml"
 fi
 
 exit 0
