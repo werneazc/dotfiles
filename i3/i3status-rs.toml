@@ -13,6 +13,17 @@ warning = 20.0
 alert = 10.0
 
 [[block]]
+block = "disk_space"
+path = "/home"
+alias = "/home"
+info_type = "used"
+format = "{icon} {used}/{total} (free: {available})"
+unit = "GB"
+interval = 60
+warning = 20.0
+alert = 10.0
+
+[[block]]
 block = "memory"
 display_type = "memory"
 format_mem = "{mem_used_percents}"
