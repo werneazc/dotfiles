@@ -41,7 +41,14 @@ if [[ $OS_NAME = "opensuse" ]] ; then
     install -m 755 "./i3/i3status-rs.toml" "$HOME/.config/i3status/config.toml"
 
     install -m 755 -d "$HOME/.config/powerline"
+    install -m 755 -d "$HOME/.config/powerline/colorschemes"
+    install -m 755 -d "$HOME/.config/powerline/themes"
+    install -m 755 -d "$HOME/.config/powerline/themes/shell"
+    install -m 755 -d "$HOME/.config/powerline/themes/tmux"
     install -m 755 "./powerline/powerline_config.json" "$HOME/.config/powerline/config.json"
+    install -m 755 "./powerline/colorschemes/solarized.json" "$HOME/.config/powerline/colorschemes/solarized.json"
+    install -m 755 "./powerline/themes/shell/default.json" "$HOME/.config/powerline/themes/shell/default.json"
+    install -m 755 "./powerline/themes/tmux/default.json" "$HOME/.config/powerline/themes/tmux/default.json"
 
     install -m 755 -d "$HOME/.config/lsd"
     install -m 755 "./lsd/config.yml" "$HOME/.config/lsd/config.yml"
