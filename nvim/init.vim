@@ -34,9 +34,10 @@ nnoremap <silent> <C-c> :tabclose<cr>
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
-Plug 'ainnhe/everforest'
+Plug 'sainnhe/everforest'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-syntastic/syntastic'
@@ -114,6 +115,14 @@ nnoremap <leader>c :FzfCommands<cr>
 nnoremap <leader>l :FzfLines<cr>
 nnoremap <leader>b :FzfBuffers<cr>
 nnoremap <leader>t :FzfBTags<cr>
+
+" Rainbow Parentheses
+" -----------------------------------------------------------------------------
+augroup rainbow_lisp
+    autocmd!
+    autocmd FileType c,cpp,json RainbowParentheses
+augroup END
+let g:rainbow#pairs = [['(',')'],['{','}'],['<','>']]
 
 " Syntastic
 " -----------------------------------------------------------------------------
