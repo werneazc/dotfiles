@@ -52,6 +52,10 @@ if [[ $OS_NAME = "opensuse" ]] ; then
 
     install -m 755 -d "$HOME/.config/lsd"
     install -m 755 "./lsd/config.yml" "$HOME/.config/lsd/config.yml"
+
+    cp -R "./rofi" "$HOME/.config/rofi"
+    chmod -R 0755 "$HOME/.config/rofi"
+
 fi
 
 exit 0
