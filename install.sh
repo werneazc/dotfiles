@@ -56,6 +56,8 @@ if [[ $OS_NAME = "opensuse" ]] ; then
     cp -R "./rofi" "$HOME/.config/rofi"
     chmod -R 0755 "$HOME/.config/rofi"
 
+    cp -R "./vifm" "$HOME/.config/vifm"
+    chmod -R 0755 "$HOME/.config/vifm"
 fi
 
 exit 0
